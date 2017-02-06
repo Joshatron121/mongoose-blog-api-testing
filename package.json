@@ -1,0 +1,26 @@
+{
+  "name": "mongoose-blog-api-challenge",
+  "version": "0.0.1",
+  "description": "Thinkful Mongoose Blog API Challenge",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha ./test",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joshatron121/mongoose-blog-api-challenge.git"
+  },
+  "author": "Josh Eimer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Joshatron121/mongoose-blog-api-challenge/issues"
+  },
+  "homepage": "https://github.com/Joshatron121/mongoose-blog-api-challenge#readme",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "express": "^4.14.1",
+    "mongoose": "^4.8.1",
+    "morgan": "^1.8.0"
+  }
+}
