@@ -27,7 +27,7 @@ function runServer(databaseUrl = DATABASE_URL, port = PORT) {
 			resolve();
 			})
 			.on('error', err => {
-				mongoose.disconect();
+				mongoose.disconnect();
 				reject(err);
 			});
 		});
@@ -52,4 +52,4 @@ if(require.main === module) {
 	runServer().catch(err => console.error(err));
 };
 
-exports.modules = {app, runServer, closeServer};
+module.exports = {app, runServer, closeServer};

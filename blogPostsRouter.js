@@ -5,21 +5,21 @@ const router = express.Router();
 const {BlogPosts} = require('./models');
 
 router.get('/', (req, res) => {
-	const filters = {}
-	const queryableFields = ['title']
+	const filters = {};
+	const queryableFields = ['title'];
 
 	queryableFields.forEach(field => {
 		if(req.query[field]) {
 			filters[field] = req.query[field];
-			console.log(filters)	
 		}
-	})
+	});
+
 	BlogPosts
 		.find(filters)
 		.exec()
 		.then(posts => {
 			res.json({
-				posts: posts.map(
+				blogposts: posts.map(
 					(blogposts) => blogposts.apiResponse())
 			});
 		})
@@ -46,9 +46,9 @@ router.post('/', (req, res) => {
 	for(let i = 0; i < requiredFields.length; i++) {
 		const field = requiredFields[i];
 		if(!(field in req.body || req.body.author)) {
-				const message = `Cannot complete request, missing required field: ${field}`;
-				console.error(message);
-				return res.status(400).send(message);
+			const message = `Cannot complete request, missing required field: ${field}`;
+			console.error(message);
+			return res.status(400).send(message);
 		}
 	};
 	
@@ -91,7 +91,7 @@ router.put('/:id', (req, res) => {
 	}
 
 	BlogPosts
-		.findByIdAndUpdate(req.params.id, {$set: toUpdate})
+		.findByIdAndUpdate(req.params.id, {$set: toUpdate}, {new: true})
 		.exec()
 		.then(blogposts => res.status(201).json(blogposts.apiResponse()))
 		.catch(err => {
