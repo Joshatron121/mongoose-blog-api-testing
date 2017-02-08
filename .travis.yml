@@ -1,4 +1,11 @@
 language: node_js
 node_js: node
 services:
-  - mongodb
+- mongodb
+deploy:
+  provider: heroku
+  api_key:
+    secure: iotTkhq7wYVUFmZXQIO42jfWx4E5ELjRgnxbUkqhijVxkjlNJJs9lUe9XHGLF61src27hZcDAiLf2qqu6go9DoxJmP/5TggNWsozQgDvVSWc9yjOBiCVmAAp7diFVfAoT4fA9Cb5A/TDZHHip13T3Ndn2CJ3ToIkhwUtTulS1oVVrsxI6Q+Fj22G0MdArVsFxl8hOqZBzIAOLWB20gPra9lCt0pV8v+cb+nhKxvF2b1LRDV4O7GBXyQWIs4fQjLSsbveX8j6qwe76v6tb4rGMDcHr4Bxi/DkyzZZ7yxKCL9go1j1YEcyJPUHhZJhpMt0hNlPsO1IR6xpzuIx0c20QgYNJCXIUIyeOKryyrPj3ImXPKN2Nb2w8gJJg7i7XW2IC14rdGQhZeGlFIQpKr1IyY+YNPL3EZyinEdGe3Zs+KiuGsfq3nfuX+63FEWmahttIodnLnHtlkDhIVWIepiBH9kdy4OJ7dPA24TEmT6mYbVSnbk2rDGuPx+FBStfZK4bWAS5Jz6Ydu6dibANTqUpOoBdCUKb9lQHHh0M+/4/6d8xFqB8NR5kGelQOReqV5KmcqfFIiZ8i9Yj2pgDGyQwigpFwBlzOqUBNORyxV+bgDAcI+AsHkIyF9K1nIDlNhvlrA+zODJErbTr5pQ9VhywosoxIaNWWkvE2jl1Cro+Hp4=
+  app: vast-reef-50852
+  on:
+    repo: Joshatron121/mongoose-blog-api-testing
